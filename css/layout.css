@@ -1,0 +1,59 @@
+.cell {
+  max-width: 960px;
+  background: lightgray;
+  border: 1px solid darkgray;
+  float: left;
+  text-align: center;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+  margin-left: calc((100% - 960px) /2);
+}
+
+@media(min-width: 480px) and (max-width: 767px) {
+  .cell {
+    width: 480px;
+    float: left;
+    background: lightgray;
+  }
+  
+  .container {
+    width: 480px;
+    margin: 0 auto;
+    margin-left: calc((100% - 480px) /2);
+}
+}
+
+/* Courtesey of:
+UI with rotating color scheme
+A PEN BY Vincent De Oliveira */
+
+.cell {
+  color: hsl(324, 70%, 45%);
+  animation: wheelHueColor 100s infinite;
+  background-color: currentColor;
+}
+@supports (background-blend-mode: overlay) {
+  .cell {
+      background-image: linear-gradient(45deg, white 10%, black 90%);
+      background-blend-mode: overlay;
+  }
+}
+
+@keyframes wheelHueColor {
+from, to { color: hsl(324, 70%, 45%); }
+10%      { color: hsl(360, 65%, 45%); }
+20%      { color: hsl( 36, 80%, 45%); }
+30%      { color: hsl( 72, 75%, 35%); }
+40%      { color: hsl(108, 65%, 35%); }
+50%      { color: hsl(144, 75%, 35%); }
+60%      { color: hsl(180, 75%, 35%); }
+70%      { color: hsl(216, 60%, 45%); }
+80%      { color: hsl(252, 65%, 50%); }
+90%      { color: hsl(288, 60%, 40%); }
+}
